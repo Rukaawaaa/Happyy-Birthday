@@ -807,5 +807,27 @@ footer {
   </div>
 </section>
 
+
+<script>
+  // Open or close the message when a Polaroid is clicked
+  function toggleMessage(card) {
+    card.classList.toggle('open');
+
+    // Update accessibility state
+    card.setAttribute(
+      'aria-expanded',
+      card.classList.contains('open')
+    );
+  }
+
+  // Allow keyboard interaction using Enter or Space
+  function keyToggle(event, card) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMessage(card);
+    }
+  }
+</script>
+
 </body>
 </html>
